@@ -10,7 +10,6 @@ class ModalAlert extends Component {
     const { classes, modal, actionsModal } = this.props;
     const { showModal, title, component } = modal;
     const { hideModal } = actionsModal;
-    console.log(showModal);
     return (
       <div className={classes.taskboard}>
         <Modal open={showModal} onClose={hideModal}>

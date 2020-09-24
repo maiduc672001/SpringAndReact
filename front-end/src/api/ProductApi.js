@@ -35,16 +35,13 @@ export const fetchDetailProduct = (commodityid) => {
   return AxiosService.get(apiUrl, { headers: headers });
 };
 export const addNewProduct = (product) => {
-  console.log("CCC");
   let formData = new FormData();
   formData.append("file", product.imageToUpload.file);
   for (var i in product) {
     formData.append([i], product[i]);
   }
 
-  console.log("f", formData);
   var apiUrl = `${API_URL}/product`;
-  console.log(product);
   return AxiosService.post(apiUrl, formData, {
     headers: {
       AUTHORIZATION: `Bearer ${sessionStorage.jwt}`,
@@ -52,18 +49,14 @@ export const addNewProduct = (product) => {
   });
 };
 export const updateProduct = (product) => {
-  console.log(product);
   let formData = new FormData();
   formData.append("file", product.imageToUpload.file);
   for (var i in product) {
     if (i !== "categoryDTO" && i !== "file") {
-      console.log(typeof i);
       formData.append([i], product[i]);
     }
   }
-  console.log("e", formData);
   var apiUrl = `${API_URL}/product`;
-  console.log(product);
   return AxiosService.put(apiUrl, formData, {
     headers: {
       AUTHORIZATION: `Bearer ${sessionStorage.jwt}`,

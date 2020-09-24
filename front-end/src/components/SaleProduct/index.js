@@ -22,7 +22,6 @@ class SaleProduct extends Component {
   };
   renderCart = (commodityid, username) => {
     const { loggedIn, user } = this.props;
-    console.log(loggedIn, user);
     if (loggedIn && username) {
       return (
         <li>

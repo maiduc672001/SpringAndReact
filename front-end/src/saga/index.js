@@ -171,7 +171,6 @@ function* addNewProduct({ payload }) {
 function* updateProduct({ payload }) {
   const { product } = payload;
   try {
-    console.log("ACCA");
     const response = yield call(productApi.updateProduct, product);
     const { status, data } = response;
     if (status === STATUS_CODE.SUCCESS) {

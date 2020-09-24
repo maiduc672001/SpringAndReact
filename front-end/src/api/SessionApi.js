@@ -9,7 +9,6 @@ export const login = (credentials) => {
     apiUrl += "/google";
     return AxiosService.post(apiUrl, credentials.profileObj);
   }
-  console.log(credentials);
   if (credentials.name) {
     apiUrl += "/facebook";
     return AxiosService.post(apiUrl, credentials);
